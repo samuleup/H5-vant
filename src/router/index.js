@@ -6,9 +6,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'mount',
     redirect: "/Content",
-    component: () => import('../views/Home.vue'),
+    component: () => import('../views/mount.vue'),
     children: [
       {
         path: '/Content',
