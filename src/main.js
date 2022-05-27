@@ -4,10 +4,10 @@ import store from './store'
 import router from './router'
 //TODO 检测当前环境
 import 'config/detection'
-// 引入vant-UI插件
-import 'vant/lib/index.css';
-import '@/common/vant'
-
+// UI插件
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 
 Vue.config.productionTip = false
 
