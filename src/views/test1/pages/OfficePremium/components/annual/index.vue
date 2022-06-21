@@ -1,5 +1,5 @@
 <template>
-  <div class='AppBodyBox'>
+  <div>
     年度
   </div>
 </template>

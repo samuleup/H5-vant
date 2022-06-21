@@ -1,6 +1,6 @@
 <template>
   <div class='AppBodyBox'>
-    季度
+    timePremium
   </div>
 </template>
 

@@ -54,6 +54,11 @@ export default {
           name: "风险监测",
           value: "5",
           router: "risk"
+        },
+        {
+          name: "实时保费",
+          value: "6",
+          router: "timePremium"
         }
       ]
 

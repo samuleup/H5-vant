@@ -22,9 +22,9 @@ const routes = [
             component: () => import('../views/test1/pages/index/index.vue'),
           },
           {
-            path: '/test1/premium',
-            name: '保费',
-            component: () => import('../views/test1/pages/premium/index.vue'),
+            path: '/test1/OfficePremium',
+            name: '总保费',
+            component: () => import('../views/test1/pages/OfficePremium/index.vue'),
           },
           {
             path: '/test1/invest',
@@ -50,6 +50,11 @@ const routes = [
             path: '/test1/risk',
             name: '风险监测',
             component: () => import('../views/test1/pages/risk/index.vue'),
+          },
+          {
+            path: '/test1/timePremium',
+            name: '实时保费',
+            component: () => import('../views/test1/pages/timePremium/index.vue'),
           }
         ]
       },

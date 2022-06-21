@@ -1,7 +1,7 @@
 <template>
   <div :style="{ width: screenWidth + 'px' }" class="swipeBox">
     <van-swipe class="my-swipe" :width="screenWidth" :autoplay="3000" :show-indicators="false">
-      <van-swipe-item @click="ClickSwiper">1</van-swipe-item>
+      <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">总保费</van-swipe-item>
       <van-swipe-item @click="ClickSwiper">2</van-swipe-item>
       <van-swipe-item @click="ClickSwiper">3</van-swipe-item>
       <van-swipe-item @click="ClickSwiper">4</van-swipe-item>
@@ -35,8 +35,8 @@ export default {
     }
   },
   methods: {
-    ClickSwiper () {
-      this.$router.push('/test1/premium')
+    ClickSwiper (path) {
+      this.$router.push(path)
     }
   },
 }

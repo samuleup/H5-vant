@@ -1,6 +1,6 @@
 <template>
-  <div class='AppBodyBox'>
-    月度
+  <div>
+    季度
   </div>
 </template>
 

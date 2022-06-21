@@ -14,6 +14,7 @@ body,
   text-align: center;
 }
 .fontText {
-  padding: 4px 10px;
+  padding: 4px 20px;
   font-size: 14px;
+  color: #494949;
 }

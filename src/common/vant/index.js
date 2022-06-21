@@ -8,7 +8,10 @@ import {
   Tabbar,
   TabbarItem,
   PullRefresh,
+  Field,
+  Popup,
   List,
+  Picker,
   Cell,
   Icon,
   Swipe,
@@ -16,13 +19,19 @@ import {
   CellGroup,
   Grid,
   Toast,
-  GridItem, Image
+  GridItem,
+  Image,
+  DatetimePicker
 } from 'vant'
 Vue.use(Button)
   .use(NavBar)
+  .use(DatetimePicker)
   .use(Tabbar)
   .use(PullRefresh)
   .use(List)
+  .use(Picker)
+  .use(Field,)
+  .use(Popup)
   .use(Toast)
   .use(Tab)
   .use(Tabs)
