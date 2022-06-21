@@ -1,20 +1,20 @@
 <template>
-  <div class="AppBodyBox">
-    333
+  <div class='AppBodyBox'>
+    季度
   </div>
 </template>
 
 <script>
+
 export default {
-  components: {
-  },
+  components: {},
   data () {
     return {
 
     };
   },
-  mounted () {
-  },
+  computed: {},
+  watch: {},
   methods: {
 
   },

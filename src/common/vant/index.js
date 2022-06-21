@@ -15,6 +15,7 @@ import {
   SwipeItem,
   CellGroup,
   Grid,
+  Toast,
   GridItem, Image
 } from 'vant'
 Vue.use(Button)
@@ -22,6 +23,7 @@ Vue.use(Button)
   .use(Tabbar)
   .use(PullRefresh)
   .use(List)
+  .use(Toast)
   .use(Tab)
   .use(Tabs)
   .use(Cell)

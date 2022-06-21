@@ -82,7 +82,7 @@ export default {
 <style lang='scss' scoped>
 .AppBodyBox {
   padding: 20px 0;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .Title {
@@ -90,7 +90,7 @@ export default {
   display: flex;
   padding: 0 10%;
   justify-content: space-between;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .item {
@@ -104,7 +104,12 @@ export default {
   width: 30%;
   height: 48px;
   padding-top: 13px !important;
-  background: repeating-linear-gradient(90deg, #F6F6F6 7%, #FFFFFF 8%, #F6F6F6 10%);
+  background: repeating-linear-gradient(
+    90deg,
+    #f6f6f6 7%,
+    #ffffff 8%,
+    #f6f6f6 10%
+  );
 }
 
 .content {
@@ -144,13 +149,12 @@ export default {
     background: linear-gradient(to right, #f9adaa, #ded6f3);
   }
 
-
   .Inem1 {
     color: #000000;
   }
 
   .Inem2 {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 </style>

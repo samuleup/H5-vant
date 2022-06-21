@@ -1,14 +1,19 @@
 html,
 body,
 .wrapper {
-    width: 100%;
-    height: 100%;
-    background: rgba(228, 228, 228, 0.74);
+  width: 100%;
+  height: 100%;
+  background: rgba(228, 228, 228, 0.74);
 }
-.AppBodyBox{
-    width: 100%;
-    height: 100%;
+.AppBodyBox {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
 }
-.TextAlignCenter{
-    text-align: center;
+.TextAlignCenter {
+  text-align: center;
+}
+.fontText {
+  padding: 4px 10px;
+  font-size: 14px;
 }

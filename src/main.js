@@ -13,6 +13,11 @@ Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 
+
+router.beforeEach((to, from, next) => {
+  store.commit('Set_routerName', to.name)
+  next()
+})
 new Vue({
   store,
   router,

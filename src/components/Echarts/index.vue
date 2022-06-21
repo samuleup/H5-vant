@@ -48,4 +48,8 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+#echarts {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 </style>
