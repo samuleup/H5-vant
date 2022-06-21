@@ -27,6 +27,8 @@ export default {
 </script>
 <style lang="scss">
 .HomeBox {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	padding: 46px 0 50px 0;
 	box-sizing: border-box;

@@ -1,10 +1,3 @@
-switch (process.env.VUE_APP_TITLE) {
-    case 'sit':
-        console.log('测试环境,地址:http://localhost:3002');
-        break;
-    case 'pro':
-        console.log('生产环境,地址:http://localhost:3003');
-        break;
-    default:
-        console.log('开发环境,地址:http://localhost:3001');
-}
+console.log('当前环境全称:', process.env.NODE_ENV);
+console.log('当前环境简称:', process.env.VUE_APP_TITLE);
+console.log('当前实际请求地址:', process.env.VUE_APP_URL);

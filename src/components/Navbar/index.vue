@@ -1,6 +1,12 @@
 <template>
-	<van-nav-bar fixed title="标题" :safe-area-inset-top="true" :placeholder="true" left-text="返回" right-text="按钮"
-		left-arrow @click-left="onClickLeft" @click-right="onClickRight" />
+	<van-nav-bar title="标题" fixed>
+		<template #left>
+			<van-icon @click="onClickLeft" name="arrow-left" size="18" />
+		</template>
+		<template #right>
+			<van-icon @click="onClickRight" name="search" size="18" />
+		</template>
+	</van-nav-bar>
 </template>
 
 <script>
@@ -17,7 +23,9 @@ export default {
 		onClickRight () {
 
 		},
-		onClickLeft () { }
+		onClickLeft () {
+			this.$router.go(-1)
+		}
 	},
 }
 </script>
