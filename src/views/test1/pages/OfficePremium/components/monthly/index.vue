@@ -1,19 +1,21 @@
 <template>
   <div>
-    月度
+    <Table :tableConfig="DimeConfig"></Table>
   </div>
 </template>
 
 <script>
-
+import Table from 'components/Table'
 export default {
-  components: {},
-  data () {
-    return {
-
-    };
+  props: {
+    DimeConfig: {
+      type: Array
+    }
   },
-  computed: {},
+  components: { Table },
+  computed: {
+
+  },
   watch: {},
   methods: {
 
