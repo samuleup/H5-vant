@@ -1,0 +1,14 @@
+html,
+body,
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(228, 228, 228, 0.74);
+}
+.AppBodyBox{
+    width: 100%;
+    height: 100%;
+}
+.TextAlignCenter{
+    text-align: center;
+}
