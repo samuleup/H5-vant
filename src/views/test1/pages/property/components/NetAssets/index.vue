@@ -1,6 +1,7 @@
 <template>
 	<div class="AppBodyBox">
 		<Echarts :Data="dataOptions" id="netAssets"></Echarts>
+		<Echarts :Data="dataOptions2" id="otherNetAssets"></Echarts>
 	</div>
 </template>
 
@@ -84,6 +85,73 @@ export default {
 						},
 						areaStyle: {},
 						data: [200, 560, 750, -180, 50]
+					}
+				]
+			},
+			// 其他综合收益
+			dataOptions2: {
+				title: [
+					{
+						text: '其他综合收益'
+					},
+					{
+						text: '单位：亿元',
+						left: '80%',
+						textStyle: {
+							fontSize: 13,
+							color: '#A9A9A9'
+						}
+					}
+				],
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '9%',
+					containLabel: true
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'shadow'
+					}
+				},
+				xAxis: {
+					type: 'category',
+					data: ['2018', '2019', '2020', '2021', '2022'],
+				},
+				yAxis: {
+					type: 'value',
+					boundaryGap: [0, '30%']
+				},
+				visualMap: {
+					type: 'piecewise',
+					show: false,
+					dimension: 0,
+					seriesIndex: 0,
+					pieces: [
+						{
+							gt: 0,
+							lt: 5,
+							color: 'rgba(89, 10, 20, 0.5)'
+						}
+					]
+				},
+				series: [
+					{
+						type: 'line',
+						smooth: 0.6,
+						symbol: 'none',
+						lineStyle: {
+							color: '#5470C6',
+							width: 5
+						},
+						markLine: {
+							symbol: ['none', 'none'],
+							label: { show: false },
+							data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }]
+						},
+						areaStyle: {},
+						data: [29, 122, 96, 135, 209]
 					}
 				]
 			}

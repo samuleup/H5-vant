@@ -47,6 +47,11 @@ const routes = [
             component: () => import('../views/test1/pages/KPI/index.vue'),
           },
           {
+            path: '/test1/KPIDetail',
+            name: 'KPI排行榜',
+            component: () => import('../views/test1/pages/KPI/KPIDetail.vue'),
+          },
+          {
             path: '/test1/risk',
             name: '风险监测',
             component: () => import('../views/test1/pages/risk/index.vue'),
