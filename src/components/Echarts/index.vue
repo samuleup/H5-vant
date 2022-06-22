@@ -1,5 +1,5 @@
 <template>
-  <div id="echarts" :style="{ width: screenWidth + 'px', height: Height + 'px' }">
+  <div :id="id" :style="{ width: screenWidth + 'px', height: Height + 'px' }">
   </div>
 </template>
 
@@ -12,6 +12,10 @@ export default {
     Height: {
       type: Number,
       default: 392
+    },
+    id: {
+      type: String,
+      default: 'echarts'
     }
   },
   data () {
@@ -40,7 +44,7 @@ export default {
   methods: {
     aa () {
       // 基于准备好的dom，初始化echarts实例
-      var myChart = this.$echarts.init(document.getElementById('echarts'));
+      var myChart = this.$echarts.init(document.getElementById(this.id));
       // 绘制图表
       myChart.setOption(this.Data);
     }
