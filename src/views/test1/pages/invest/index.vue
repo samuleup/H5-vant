@@ -34,7 +34,6 @@ export default {
 <style lang='scss' scoped>
 .AppBodyBox /deep/ .van-tabs__content {
   width: 100%;
-  height: 94%;
 }
 
 .AppBodyBox /deep/ .van-tab__pane {
