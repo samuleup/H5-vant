@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" :style="{ width: screenWidth + 'px', height: Height + 'px' }">
+  <div :id="id" :style="{ width: 100 + '%', height: Height + 'px' }">
   </div>
 </template>
 
@@ -20,26 +20,12 @@ export default {
   },
   data () {
     return {
-      screenWidth: null,
     };
   },
   mounted () {
     this.aa()
-    this.screenWidth = document.body.clientWidth
-    window.onresize = () => {
-      return (() => {
-        this.screenWidth = document.body.clientWidth
-      })()
-    }
   },
   watch: {
-    screenWidth: {
-      handler: function (val) {
-        this.screenWidth = val
-      },
-      immediate: true,
-      deep: true
-    }
   },
   methods: {
     aa () {
