@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" :style="{ width: 100 + '%', height: Height + 'px' }">
+  <div :id="id" :style="{ width: 100 + '%', height: Height + 'px' }" class="echarts">
   </div>
 </template>
 
@@ -38,8 +38,8 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-#echarts {
-  padding: 0 20px;
+.echarts {
+  padding: 10px 20px;
   box-sizing: border-box;
 }
 </style>

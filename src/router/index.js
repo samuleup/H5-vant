@@ -18,7 +18,7 @@ const routes = [
         children: [
           {
             path: '/test1/index',
-            name: '首页',
+            name: '中邮保险',
             component: () => import('../views/test1/pages/index/index.vue'),
           },
           {

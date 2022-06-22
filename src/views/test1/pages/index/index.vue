@@ -7,12 +7,14 @@
     <!-- 板块 -->
     <div class="groupBox">
       <van-grid :column-num="3">
+        <van-cell class="block" icon="back-top" title="数据板块" />
         <van-grid-item v-for="(item, index) in GridList" :key="index" :to="'/test1/' + item.router">
           <div slot="default" class="defaultBox">
             <van-image src=" https://img01.yzcdn.cn/vant/apple-1.jpg" />
             <div slot="text" class="TextAlignCenter">{{ item.name }}</div>
           </div>
         </van-grid-item>
+        <van-cell class="block" icon="back-top" title="其他板块" />
       </van-grid>
     </div>
   </div>
@@ -104,6 +106,7 @@ export default {
   border-radius: 10px;
   top: 222px;
   left: 1%;
+  overflow: hidden;
 }
 
 .finishedBox {
