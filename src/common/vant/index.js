@@ -21,7 +21,11 @@ import {
   Toast,
   GridItem,
   Image,
-  DatetimePicker
+  DatetimePicker,
+  Badge,
+  Circle,
+  Col,
+  Row
 } from 'vant'
 Vue.use(Button)
   .use(NavBar)
@@ -43,4 +47,8 @@ Vue.use(Button)
   .use(Swipe)
   .use(SwipeItem)
   .use(CellGroup)
-  .use(TabbarItem);
+  .use(TabbarItem)
+  .use(Badge)
+  .use(Circle)
+  .use(Col)
+  .use(Row);

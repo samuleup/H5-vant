@@ -10,7 +10,7 @@
         <van-cell class="block" icon="back-top" title="数据板块" />
         <van-grid-item v-for="(item, index) in GridList" :key="index" :to="'/test1/' + item.router">
           <div slot="default" class="defaultBox">
-            <van-image src=" https://img01.yzcdn.cn/vant/apple-1.jpg" />
+            <van-image :src="item.url" />
             <div slot="text" class="TextAlignCenter">{{ item.name }}</div>
           </div>
         </van-grid-item>
@@ -35,32 +35,38 @@ export default {
         {
           name: "投资",
           value: "1",
-          router: "invest"
+          router: "invest",
+          url: require('@/assets/img/home/投资.png')
         },
         {
           name: "资产",
           value: "2",
-          router: "property"
+          router: "property",
+          url: require('@/assets/img/home/资产.png')
         },
         {
           name: "品质",
           value: "3",
-          router: "quality"
+          router: "quality",
+          url: require('@/assets/img/home/品质.png')
         },
         {
           name: "KPI",
           value: "4",
-          router: "KPI"
+          router: "KPI",
+          url: require('@/assets/img/home/KPI.png')
         },
         {
           name: "风险监测",
           value: "5",
-          router: "risk"
+          router: "risk",
+          url: require('@/assets/img/home/风险监测.png')
         },
         {
           name: "实时保费",
           value: "6",
-          router: "timePremium"
+          router: "timePremium",
+          url: require('@/assets/img/home/保费.png')
         }
       ]
 
