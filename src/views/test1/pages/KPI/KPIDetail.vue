@@ -25,9 +25,10 @@
 				</van-col>
 			</van-row>
 			<p style="margin-right: 20px;">AI数据</p>
-			<van-image :src="require('./e.jpg')">
+			<van-image :src="require('./e.jpg')" style="padding: 10px;">
 				综合第{{rank}}名
 			</van-image>
+			<van-image :src="require('./AI.png')" style="padding: 5px;" />
 			<van-tabs v-model="active">
 				<van-tab title="品质达成" name="1">
 					<quality></quality>

@@ -11,15 +11,16 @@
 			</van-dropdown-menu>
 			<!-- 仪表盘 -->
 			<div class="tableClass">
-				<div id="gauge" style="width: 100%;height: 400px"></div>
+				<div id="gauge" style="width: 100%;height: 400px;margin-top: -50px;"></div>
 				<div id="gauge2" style="width: 100%;height: 400px;margin-top: -200px;"></div>
 			</div>
 		</div>
 		<!--  卡片2 -->
 		<div class="card" style="margin: -200px 20px 20px 20px;">
 			<p class="title">指标历史值</p>
-			<van-image :src="require('./indexHistory.jpg')" width="100%">
-			</van-image>
+			<van-image v-if="value === 0" :src="require('./indexHistory.jpg')" width="100%"/>
+			<van-image v-if="value === 1" :src="require('./indexHistory1.jpg')" width="100%"/>
+			<van-image v-if="value === 2" :src="require('./indexHistory2.jpg')" width="100%"/>
 		</div>
 	</div>
 </template>
@@ -223,5 +224,6 @@ export default {
 .tableClass {
 	width: 320px;
 	padding: 10px;
+    overflow: hidden;
 }
 </style>
