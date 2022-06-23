@@ -27,7 +27,7 @@
 <script>
 
 export default {
-	components: { },
+	components: {},
 	data() {
 		return {
 			value: 0,

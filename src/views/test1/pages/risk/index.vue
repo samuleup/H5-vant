@@ -8,7 +8,7 @@
         <van-dropdown-item v-model="value" :options="option" />
       </van-dropdown-menu>
       <!-- 风险指标类别  表格 -->
-      <div class="tableClass" @click="toIndex">
+      <div class="tableClass">
         <Quarter1 v-if="value === 0 || value === 2 || value === 4"/>
         <Quarter2 v-if="value === 1 || value === 3"/>
       </div>
@@ -108,11 +108,7 @@ export default {
     
   },
   watch: {},
-  methods: {
-    toIndex () {
-      this.$router.push('/test1/riskIndex')
-    }
-  },
+  methods: {},
 }
 </script>
 <style lang='scss' scoped>

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Echarts :Data="GeneralIndicators" id="GeneralIndicators1"></Echarts>
-        <van-image :src="require('./table2.jpg')"></van-image>
+        <van-image :src="require('./table2.jpg')" @click="toIndex"></van-image>
 	</div>
 </template>
 
@@ -99,7 +99,9 @@ export default {
 	mounted() {
 	},
 	methods: {
-
+		toIndex() {
+			this.$router.push('/test1/riskIndex')
+		},
 	},
 }
 </script>
