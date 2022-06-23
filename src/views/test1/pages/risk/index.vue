@@ -1,20 +1,189 @@
 <template>
-  <div class='AppBodyBox'>
 
+  <div class='riskBodyBox'>
+    <van-image :src="require('@/assets/img/risk/header.jpg')" width="100%"></van-image>
+    <!-- 卡片1 -->
+    <div class="card">
+      <p class="title">大类指标红黄绿分布情况</p>
+      <van-dropdown-menu active-color="#1989fa">
+        <van-dropdown-item v-model="value" :options="option" />
+      </van-dropdown-menu>
+      <!-- 风险指标类别  表格 -->
+      <div class="tableClass">
+        <Echarts :Data="GeneralIndicators" id="GeneralIndicators"></Echarts>
+        <Table :tableConfig="DimeConfig"></Table>
+      </div>
+    </div>
+    <!--  卡片2 -->
+    <div class="card" style="margin: 20px 20px 20px;">
+      <p class="title">风险综合评估</p>
+      <Echarts :Data="riskAssessment" id="riskAssessment"></Echarts>
+    </div>
   </div>
 </template>
 
 <script>
+import Echarts from 'components/Echarts/index.vue';
+import Table from 'components/Table'
 
 export default {
-  components: {},
+  components: { Echarts, Table },
   data () {
     return {
-      list: [
-      ]
+      value: 0,
+      option: [
+        { text: '2021年第2季度', value: 0 },
+        { text: '2021年第1季度', value: 1 },
+        { text: '2020年第4季度', value: 2 },
+        { text: '2020年第3季度', value: 3 },
+        { text: '2020年第2季度', value: 4 }
+      ],
+      GeneralIndicators: {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
+        },
+        legend: {},
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: ['公司整体风险偏好', '大类资产配置', '保险风险', '运营与合规风险', '洗钱与欺诈风险']
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ],
+        series: [
+          {
+            name: '安全区间',
+            type: 'bar',
+            stack: 'Ad',
+            emphasis: {
+              focus: 'series'
+            },
+            data: [320, 332, 301, 334, 390]
+          },
+          {
+            name: '预警期间',
+            type: 'bar',
+            stack: 'Ad',
+            emphasis: {
+              focus: 'series'
+            },
+            data: [120, 132, 101, 134, 90]
+          },
+          {
+            name: '突破限额',
+            type: 'bar',
+            stack: 'Ad',
+            emphasis: {
+              focus: 'series'
+            },
+            data: [220, 182, 191, 234, 290]
+          }
+        ]
+      },
+      riskAssessment: {
+        color: ['#67F9D8', '#FFE434', '#56A3F1', '#FF917C'],
+        radar: [
+          {
+            indicator: [
+              { text: '公司整体风险偏好' },
+              { text: '洗钱与欺诈风险' },
+              { text: '大类资产配置' },
+              { text: '运营与合规风险' },
+              { text: '保险风险' }
+            ],
+            center: ['45%', '40%'],
+            radius: 80,
+            startAngle: 90,
+            splitNumber: 4,
+            shape: 'circle',
+            axisName: {
+              formatter: '【{value}】',
+              color: '#428BD4'
+            },
+            splitArea: {
+              areaStyle: {
+                color: ['#77EADF', '#26C3BE', '#64AFE9', '#428BD4'],
+                shadowColor: 'rgba(0, 0, 0, 0.2)',
+                shadowBlur: 10
+              }
+            },
+            axisLine: {
+              lineStyle: {
+                color: 'rgba(211, 253, 250, 0.8)'
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: 'rgba(211, 253, 250, 0.8)'
+              }
+            }
+          }
+        ],
+        series: [
+          {
+            type: 'radar',
+            emphasis: {
+              lineStyle: {
+                width: 4
+              }
+            },
+            data: [
+              {
+                value: [100, 8, 0.4, -80, 2000],
+                name: 'Data A'
+              },
+              {
+                value: [60, 5, 0.3, -100, 1500],
+                name: 'Data B',
+                areaStyle: {
+                  color: 'rgba(255, 228, 52, 0.6)'
+                }
+              }
+            ]
+          }
+        ]
+      }
     };
   },
-  computed: {},
+  computed: {
+    DimeConfig () {
+      return [
+        {
+          label: '风险指标类别',
+          prop: 'roomType'
+        },
+        {
+          label: '合计',
+          prop: 'closedAccount'
+        },
+        {
+          label: '绿',
+          prop: 'noAccount'
+        },
+        {
+          label: '黄',
+          prop: 'givePrice'
+        },
+        {
+          label: '红',
+          prop: 'totalPrice'
+        }
+      ]
+    },
+  },
   watch: {},
   methods: {
 
@@ -22,4 +191,24 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+.riskBodyBox {
+  padding: 20px 0;
+  background: white;
+}
+.card {
+  padding: 20px 0;
+  background: #f0f2f6;
+  position: relative;
+  margin: -50px 20px 20px;
+  border-radius: 10px;
+}
+.title {
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+.tableClass {
+  width: 320px;
+  overflow: hidden;
+}
 </style>

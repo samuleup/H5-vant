@@ -36,37 +36,37 @@ export default {
           name: "投资",
           value: "1",
           router: "invest",
-          url: require('@/assets/img/home/投资.png')
+          url: require('./01.png')
         },
         {
           name: "资产",
           value: "2",
           router: "property",
-          url: require('@/assets/img/home/资产.png')
+          url: require('./02.png')
         },
         {
           name: "品质",
           value: "3",
           router: "quality",
-          url: require('@/assets/img/home/品质.png')
+          url: require('./03.png')
         },
         {
           name: "KPI",
           value: "4",
           router: "KPI",
-          url: require('@/assets/img/home/KPI.png')
+          url: require('./04.png')
         },
         {
           name: "风险监测",
           value: "5",
           router: "risk",
-          url: require('@/assets/img/home/风险监测.png')
+          url: require('./05.png')
         },
         {
           name: "实时保费",
           value: "6",
           router: "timePremium",
-          url: require('@/assets/img/home/保费.png')
+          url: require('./06.png')
         }
       ]
 
