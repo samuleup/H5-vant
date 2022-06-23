@@ -1,6 +1,6 @@
 <template>
   <div class='riskBodyBox'>
-    <van-image src="./header.jpg" width="100%"></van-image>
+    <van-image :src="require('./header.jpg')" width="100%"></van-image>
     <!-- 卡片1 -->
     <div class="card">
       <p class="title">大类指标红黄绿分布情况</p>
@@ -8,9 +8,9 @@
         <van-dropdown-item v-model="value" :options="option" />
       </van-dropdown-menu>
       <!-- 风险指标类别  表格 -->
-      <div class="tableClass">
-        <Echarts :Data="GeneralIndicators" id="GeneralIndicators"></Echarts>
-        <Table :tableConfig="DimeConfig"></Table>
+      <div class="tableClass" @click="toIndex">
+        <Quarter1 v-if="value === 0 || value === 2 || value === 4"/>
+        <Quarter2 v-if="value === 1 || value === 3"/>
       </div>
     </div>
     <!--  卡片2 -->
@@ -22,11 +22,13 @@
 </template>
 
 <script>
-import Echarts from 'components/Echarts/index.vue';
+import Echarts from 'components/Echarts/index.vue'
 import Table from 'components/Table'
+import Quarter1 from './components/quarter1.vue'
+import Quarter2 from './components/quarter2.vue'
 
 export default {
-  components: { Echarts, Table },
+  components: { Echarts, Table, Quarter1, Quarter2 },
   data () {
     return {
       value: 0,
@@ -37,61 +39,6 @@ export default {
         { text: '2020年第3季度', value: 3 },
         { text: '2020年第2季度', value: 4 }
       ],
-      GeneralIndicators: {
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
-        legend: {},
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'category',
-            data: ['公司整体风险偏好', '大类资产配置', '保险风险', '运营与合规风险', '洗钱与欺诈风险']
-          }
-        ],
-        yAxis: [
-          {
-            type: 'value'
-          }
-        ],
-        series: [
-          {
-            name: '安全区间',
-            type: 'bar',
-            stack: 'Ad',
-            emphasis: {
-              focus: 'series'
-            },
-            data: [320, 332, 301, 334, 390]
-          },
-          {
-            name: '预警期间',
-            type: 'bar',
-            stack: 'Ad',
-            emphasis: {
-              focus: 'series'
-            },
-            data: [120, 132, 101, 134, 90]
-          },
-          {
-            name: '突破限额',
-            type: 'bar',
-            stack: 'Ad',
-            emphasis: {
-              focus: 'series'
-            },
-            data: [220, 182, 191, 234, 290]
-          }
-        ]
-      },
       riskAssessment: {
         color: ['#67F9D8', '#FFE434', '#56A3F1', '#FF917C'],
         radar: [
@@ -158,34 +105,13 @@ export default {
     };
   },
   computed: {
-    DimeConfig () {
-      return [
-        {
-          label: '风险指标类别',
-          prop: 'roomType'
-        },
-        {
-          label: '合计',
-          prop: 'closedAccount'
-        },
-        {
-          label: '绿',
-          prop: 'noAccount'
-        },
-        {
-          label: '黄',
-          prop: 'givePrice'
-        },
-        {
-          label: '红',
-          prop: 'totalPrice'
-        }
-      ]
-    },
+    
   },
   watch: {},
   methods: {
-
+    toIndex () {
+      this.$router.push('/test1/riskIndex')
+    }
   },
 }
 </script>
@@ -209,5 +135,6 @@ export default {
 .tableClass {
   width: 320px;
   overflow: hidden;
+  padding: 10px;
 }
 </style>

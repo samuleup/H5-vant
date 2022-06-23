@@ -10,8 +10,8 @@ export default {
       type: Object,
     },
     Height: {
-      type: Number,
-      default: 392
+      type: String,
+      default: '392'
     },
     id: {
       type: String,

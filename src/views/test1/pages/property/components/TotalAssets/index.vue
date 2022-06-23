@@ -1,13 +1,15 @@
 <template>
 	<div class="AppBodyBox">
 		<Echarts :Data="dataOptions" id="totalAssets"></Echarts>
+		<benchmarking/>
 	</div>
 </template>
 
 <script>
 import Echarts from 'components/Echarts/index.vue'
+import Benchmarking from './benchmarking.vue';
 export default {
-	components: { Echarts },
+	components: { Echarts, Benchmarking },
 	data() {
 		return {
 			dataOptions: {
@@ -39,7 +41,7 @@ export default {
 				xAxis: [
 					{
 						type: 'category',
-						data: ['投资资产', '固定及无形资产', '其他', '上市公司同业对标', '银保公司同业对标'],
+						data: ['投资资产', '固定及无形资产', '其他'],
 						axisTick: {
 							alignWithLabel: true
 						},
@@ -58,7 +60,7 @@ export default {
 						name: 'Direct',
 						type: 'bar',
 						barWidth: '60%',
-						data: [200, 334, 90, 330, 220],
+						data: [200, 334, 90],
 						showBackground: true,
 						backgroundStyle: {
 							color: 'rgba(180, 180, 180, 0.2)'

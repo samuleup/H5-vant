@@ -57,6 +57,11 @@ const routes = [
             component: () => import('../views/test1/pages/risk/index.vue'),
           },
           {
+            path: '/test1/riskIndex',
+            name: '指标展示',
+            component: () => import('../views/test1/pages/risk/riskIndex.vue'),
+          },
+          {
             path: '/test1/timePremium',
             name: '实时保费',
             component: () => import('../views/test1/pages/timePremium/index.vue'),
