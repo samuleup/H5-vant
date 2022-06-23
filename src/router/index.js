@@ -60,7 +60,12 @@ const routes = [
             path: '/test1/timePremium',
             name: '实时保费',
             component: () => import('../views/test1/pages/timePremium/index.vue'),
-          }
+          },
+          {
+            path: '/timePremium1',
+            name: '详情',
+            component: () => import('../views/test1/pages/timePremium/defa/index.vue'),
+          },
         ]
       },
       {

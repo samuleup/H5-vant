@@ -1,98 +1,102 @@
 <template>
-  <div class='AppBodyBox'>
-    <div class="a01"></div>
-    <Echarts :Data="dataOptions" id="totalAssets"></Echarts>
-  </div>
+  <van-tabs v-model="active1" class="AppBodyBox">
+    <van-tab title="当日" name="1">
+      <div class="a01" @click="$router.push('/timePremium1?code=1')"></div>
+      <div class="a02">
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+      </div>
+      <div class="a03"></div>
+      <div class="a04">
+        <van-tabs v-model="active2">
+          <van-tab title="渠道">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="子公司">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="整体">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+        </van-tabs>
+      </div>
+    </van-tab>
+    <van-tab title="月度" name="2">
+      <div class="a01" @click="$router.push('/timePremium1?code=1')"></div>
+      <div class="a02">
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+      </div>
+      <div class="a03"></div>
+      <div class="a04">
+        <van-tabs v-model="active2">
+          <van-tab title="渠道">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="子公司">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="整体">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+        </van-tabs>
+      </div>
+    </van-tab>
+    <van-tab title="季度" name="3">
+      <div class="a01" @click="$router.push('/timePremium1?code=1')"></div>
+      <div class="a02">
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+      </div>
+      <div class="a03"></div>
+      <div class="a04">
+        <van-tabs v-model="active2">
+          <van-tab title="渠道">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="子公司">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="整体">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+        </van-tabs>
+      </div>
+    </van-tab>
+    <van-tab title="年度" name="3">
+      <div class="a01" @click="$router.push('/timePremium1?code=1')"></div>
+      <div class="a02">
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+        <div @click="$router.push('/timePremium1?code=2')"></div>
+      </div>
+      <div class="a03"></div>
+      <div class="a04">
+        <van-tabs v-model="active2">
+          <van-tab title="渠道">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="子公司">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+          <van-tab title="整体">
+            <div class="div" @click="$router.push('/timePremium1?code=3')"></div>
+          </van-tab>
+        </van-tabs>
+      </div>
+    </van-tab>
+  </van-tabs>
 </template>
 
 <script>
-import Echarts from 'components/Echarts/index.vue'
 export default {
-  components: { Echarts },
   data () {
     return {
-      dataOptions: {
-        title: [
-          {
-            text: '实时增长率'
-          },
-          {
-            text: '单位：亿元',
-            left: '80%',
-            textStyle: {
-              fontSize: 13,
-              color: '#A9A9A9'
-            }
-          }
-        ],
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'category',
-            data: ['总保费', '新单保费', '赔付保费', '上市公司同业对标', '银保公司同业对标'],
-            axisTick: {
-              alignWithLabel: true
-            },
-            axisLabel: {
-              formatter: function (v) { return v.split('').join('\n') }
-            }
-          }
-        ],
-        yAxis: [
-          {
-            type: 'value'
-          }
-        ],
-        series: [
-          {
-            name: 'Direct',
-            type: 'bar',
-            barWidth: '60%',
-            data: [200, 334, 90, 330, 220],
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(180, 180, 180, 0.2)'
-            },
-            itemStyle: {  // 使用方法二的写法
-              color: {
-                type: 'linear',
-                x: 0,  //右
-                y: 0,  //下
-                x2: 0,  //左
-                y2: 1,  //上
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: 'pink' // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.7,
-                    color: '#2378f7' // 70% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: '#83bff6' // 100% 处的颜色
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      }
+      active1: '1',
+      active2: '1'
     };
   },
-  computed: {},
+  computed: {
+  },
   watch: {},
   methods: {
 
@@ -100,13 +104,50 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-.AppBodyBox {
-  padding: 10px 20px;
-  box-sizing: border-box;
+.AppBodyBox /deep/ .van-tabs__content {
+  width: 100%;
+}
+
+.AppBodyBox /deep/ .van-tab__pane {
+  width: 100%;
+  height: 100%;
 }
 .a01 {
-  width: 100%;
-  height: 400px;
-  background: url("./01.png");
+  height: 378.57px;
+  background: url("./01.png") no-repeat center;
+  background-size: 100%;
+}
+.a02 {
+  div:nth-of-type(1) {
+    float: left;
+    width: 50%;
+    height: 68.57px;
+    background: url("./02-1.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+  div:nth-of-type(2) {
+    width: 50%;
+    float: right;
+    height: 68.57px;
+    background: url("./02-2.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+.a03 {
+  height: 661.57px;
+  background: url("./03.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.a04 {
+  .div:nth-of-type(1) {
+    height: 422.57px;
+    background: url("./04.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+  .div:nth-of-type(2) {
+    height: 222.57px !important;
+    background: url("./04.png") no-repeat center;
+    background-size: 100% 200%;
+  }
 }
 </style>

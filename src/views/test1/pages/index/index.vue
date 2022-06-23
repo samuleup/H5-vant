@@ -6,16 +6,22 @@
     </div>
     <!-- 板块 -->
     <div class="groupBox">
+      <div class="icon">
+        <img src="./07.png" alt="">
+        <span>综合统计</span>
+      </div>
       <van-grid :column-num="3">
-        <van-cell class="block" icon="back-top" title="数据板块" />
         <van-grid-item v-for="(item, index) in GridList" :key="index" :to="'/test1/' + item.router">
           <div slot="default" class="defaultBox">
             <img class="img" :src="item.url" />
             <div slot="text" class="TextAlignCenter">{{ item.name }}</div>
           </div>
         </van-grid-item>
-        <van-cell class="block" icon="back-top" title="其他板块" />
       </van-grid>
+      <div class="icon">
+        <img src="./08.png" alt="">
+        <span>其他统计</span>
+      </div>
     </div>
   </div>
 </template>
@@ -131,6 +137,7 @@ export default {
 
 .defaultBox {
   padding: 20px;
+  text-align: center;
 }
 
 .van-grid-item__content {
@@ -139,5 +146,17 @@ export default {
 .img {
   width: 40px;
   height: 40px;
+}
+.icon {
+  padding: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+  img {
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
 }
 </style>

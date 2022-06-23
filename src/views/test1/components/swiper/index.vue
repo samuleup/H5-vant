@@ -1,9 +1,9 @@
 <template>
   <div :style="{ width: screenWidth + 'px' }" class="swipeBox">
     <van-swipe class="my-swipe" :width="screenWidth" :autoplay="3000" :show-indicators="false">
-      <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">总保费</van-swipe-item>
-      <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">总保费</van-swipe-item>
-      <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">总保费</van-swipe-item>
+      <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">1</van-swipe-item>
+      <!-- <van-swipe-item @click="ClickSwiper('/test1/timePremium')">实时保费</van-swipe-item> -->
+      <!-- <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">总保费</van-swipe-item> -->
     </van-swipe>
   </div>
 </template>
@@ -63,7 +63,7 @@ export default {
   background-size: 100% 100%;
 }
 .van-swipe-item:nth-of-type(2) {
-  background: url("../../../../assets/banner2.jpg") no-repeat center;
+  background: url("../../../../assets/banner2.png") no-repeat center;
   background-size: 100% 100%;
 }
 .van-swipe-item:nth-of-type(3) {

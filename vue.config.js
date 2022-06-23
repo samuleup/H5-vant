@@ -8,7 +8,7 @@ module.exports = {
 			})
 	},
 	publicPath: './',
-	outputDir: 'Dist-Vantui-dome', // 输出文件目录
+	outputDir: 'dist-Vantui-dome', // 输出文件目录
 	lintOnSave: false, //设置是否在开发环境下每次保存代码时都启用 eslint验证
 	configureWebpack: { // 别名配置
 		resolve: {

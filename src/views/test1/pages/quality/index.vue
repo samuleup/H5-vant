@@ -1,15 +1,12 @@
 <template>
   <div class='AppBodyBox'>
     <van-tabs v-model="active">
-      <van-tab title="13月累计继续率">
+      <van-tab title="累计继续率">
         <div class="Box">
           <p class="Title">13月累计继续率</p>
           <Echarts :Data="Data1"></Echarts>
           <div class="FONT" @click="And">查看分公司排名</div>
-
         </div>
-      </van-tab>
-      <van-tab title="25月累计继续率">
         <div class="Box">
           <p class="Title">25月累计继续率</p>
           <Echarts id="Data1" :Data="Data1"></Echarts>

@@ -1,23 +1,24 @@
 <template>
-	<div class=''>
-		未定义2
-	</div>
+  <div class=''>
+    src\components\Chart\index.vue
+    <Chart></Chart>
+  </div>
 </template>
 
 <script>
-
+import Chart from 'components/Chart'
 export default {
-	components: {},
-	data () {
-		return {
+  components: { Chart },
+  data () {
+    return {
 
-		};
-	},
-	computed: {},
-	watch: {},
-	methods: {
+    };
+  },
+  computed: {},
+  watch: {},
+  methods: {
 
-	},
+  },
 }
 </script>
 <style lang='scss' scoped>
