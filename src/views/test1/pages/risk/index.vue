@@ -1,7 +1,6 @@
 <template>
-
   <div class='riskBodyBox'>
-    <van-image :src="require('@/assets/img/risk/header.jpg')" width="100%"></van-image>
+    <van-image src="./header.jpg" width="100%"></van-image>
     <!-- 卡片1 -->
     <div class="card">
       <p class="title">大类指标红黄绿分布情况</p>

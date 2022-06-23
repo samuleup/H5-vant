@@ -6,13 +6,13 @@
       <van-tabs v-model="active" sticky>
         <van-tab v-for="index in ['综合得分', '达成得分', '品质得分', '管理得分']" :title="index" :key="index">
           <div class="rankingBox">
-            <van-image :src="require('@/assets/img/银牌.png')" style="margin-top: 30px;">
+            <van-image src="./g.png" style="margin-top: 30px;">
               北京
             </van-image>
-            <van-image :src="require('@/assets/img/金牌.png')">
+            <van-image src="./h.png">
               青岛
             </van-image>
-            <van-image :src="require('@/assets/img/铜牌.png')" style="margin-top: 30px;">
+            <van-image src="./i.png" style="margin-top: 30px;">
               浙江
             </van-image>
           </div>
@@ -118,7 +118,7 @@ export default {
   display: flex;
   justify-content: center;
   height: 180px;
-  background-image: url("../../../../assets/img/排行榜.png");
+  background-image: url("./f.png");
   background-repeat: no-repeat;
   background-size: 175px 110px;
   background-position: bottom;
