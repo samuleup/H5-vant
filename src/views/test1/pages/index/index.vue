@@ -10,7 +10,7 @@
         <van-cell class="block" icon="back-top" title="数据板块" />
         <van-grid-item v-for="(item, index) in GridList" :key="index" :to="'/test1/' + item.router">
           <div slot="default" class="defaultBox">
-            <van-image :src="item.url" />
+            <img class="img" :src="item.url" />
             <div slot="text" class="TextAlignCenter">{{ item.name }}</div>
           </div>
         </van-grid-item>
@@ -36,37 +36,37 @@ export default {
           name: "投资",
           value: "1",
           router: "invest",
-          url: './01.png'
+          url: require('./01.png')
         },
         {
           name: "资产",
           value: "2",
           router: "property",
-          url: './02.png'
+          url: require('./02.png')
         },
         {
           name: "品质",
           value: "3",
           router: "quality",
-          url: './03.png'
+          url: require('./03.png')
         },
         {
           name: "KPI",
           value: "4",
           router: "KPI",
-          url: './04.png'
+          url: require('./04.png')
         },
         {
           name: "风险监测",
           value: "5",
           router: "risk",
-          url: './05.png'
+          url: require('./05.png')
         },
         {
           name: "实时保费",
           value: "6",
           router: "timePremium",
-          url: './06.png'
+          url: require('./06.png')
         }
       ]
 
@@ -135,5 +135,9 @@ export default {
 
 .van-grid-item__content {
   background-color: hsla(0, 0%, 100%, 0);
+}
+.img {
+  width: 40px;
+  height: 40px;
 }
 </style>
