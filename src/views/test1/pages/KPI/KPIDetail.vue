@@ -25,7 +25,7 @@
 				</van-col>
 			</van-row>
 			<p style="margin-right: 20px;">AI数据</p>
-			<van-image :src="require('@/assets/img/雷达图.jpg')">
+			<van-image :src="require('@/assets/img/RadarChart.jpg')">
 				综合第1名
 			</van-image>
 			<van-tabs v-model="active">

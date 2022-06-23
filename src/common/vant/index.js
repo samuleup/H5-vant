@@ -25,7 +25,9 @@ import {
   Badge,
   Circle,
   Col,
-  Row
+  Row,
+  DropdownMenu,
+  DropdownItem
 } from 'vant'
 Vue.use(Button)
   .use(NavBar)
@@ -51,4 +53,6 @@ Vue.use(Button)
   .use(Badge)
   .use(Circle)
   .use(Col)
-  .use(Row);
+  .use(Row)
+  .use(DropdownMenu)
+  .use(DropdownItem);
