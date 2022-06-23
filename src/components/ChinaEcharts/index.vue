@@ -1,5 +1,5 @@
 <template>
-	<div id="chinaMap" :style="{ width: 100 + '%', height: 500 + 'px' }" class="echarts">
+	<div id="chinaMap" :style="{ width: 100 + '%', height: 430 + 'px' }" class="echarts">
 	</div>
 </template>
 
@@ -21,23 +21,13 @@ export default {
 			// 初始化中国地图
 			this.$echarts.registerMap("china", china);
 			let myChart = this.$echarts.init(document.getElementById('chinaMap'))
-			// let option = {
-			// 	geo: {
-			// 		map: 'china',//这里的名称需要和china.js: echarts.registerMap('china',{})中的名称一致
-			// 		label: { show: true }, //显示省份
-			// 		roam: true, //缩放
-			// 	},
-			// 	series: [
-			// 	]
-			// }
-			// myChart.setOption(option)
 			var mapBoxOption = {
 				series: [{
 					type: 'map',
 					mapType: 'china',
 					label: {
 						normal: {
-							show: true, //显示省份标签
+							show: false, //显示省份标签
 							textStyle: {
 								color: "blue"
 							} //省份标签字体颜色

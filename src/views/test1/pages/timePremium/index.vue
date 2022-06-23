@@ -7,6 +7,7 @@
         <div @click="$router.push('/timePremium1?code=2')"></div>
       </div>
       <div class="a03">
+        <ChinaEcharts />
         <div class="ulBox">
           <ul class="and" style="z-index:999;background: rgb(247 247 247);">
             <p style="height: 12px; "> </p>
@@ -111,63 +112,62 @@
 </template>
 
 <script>
+import ChinaEcharts from '../../../../components/ChinaEcharts/index.vue';
 export default {
-  data () {
-    return {
-      active1: '1',
-      active2: '1',
-      List1: [
-        {
-          label: "江苏",
-          value: "1203",
-        },
-        {
-          label: "山东",
-          value: "789",
-        },
-        {
-          label: "四川",
-          value: "399",
-        },
-        {
-          label: "陕西",
-          value: "367",
-        },
-        {
-          label: "天津",
-          value: "253",
-        }
-      ],
-      List2: [
-        {
-          label: "青岛",
-          value: "64",
-        },
-        {
-          label: "苏州",
-          value: "58",
-        },
-        {
-          label: "北京",
-          value: "46",
-        },
-        {
-          label: "海南",
-          value: "22",
-        },
-        {
-          label: "黑龙江",
-          value: "21",
-        }
-      ]
-    };
-  },
-  computed: {
-  },
-  watch: {},
-  methods: {
-
-  },
+    data() {
+        return {
+            active1: "1",
+            active2: "1",
+            List1: [
+                {
+                    label: "江苏",
+                    value: "1203",
+                },
+                {
+                    label: "山东",
+                    value: "789",
+                },
+                {
+                    label: "四川",
+                    value: "399",
+                },
+                {
+                    label: "陕西",
+                    value: "367",
+                },
+                {
+                    label: "天津",
+                    value: "253",
+                }
+            ],
+            List2: [
+                {
+                    label: "青岛",
+                    value: "64",
+                },
+                {
+                    label: "苏州",
+                    value: "58",
+                },
+                {
+                    label: "北京",
+                    value: "46",
+                },
+                {
+                    label: "海南",
+                    value: "22",
+                },
+                {
+                    label: "黑龙江",
+                    value: "21",
+                }
+            ]
+        };
+    },
+    computed: {},
+    watch: {},
+    methods: {},
+    components: { ChinaEcharts }
 }
 </script>
 <style lang='scss' scoped>
@@ -224,6 +224,7 @@ export default {
   display: flex;
   padding: 10px 4%;
   box-sizing: border-box;
+  margin-top: -50px;
 }
 ul {
   width: 50%;
