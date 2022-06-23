@@ -6,26 +6,27 @@
 			<van-tabs v-model="active" sticky>
 				<van-tab v-for="index in ['综合得分', '达成得分', '品质得分', '管理得分']" :title="index" :key="index">
 					<div class="rankingBox">
-						<van-image :src="require('./g.png')" @click="toDetail({city: '北京', badge: 2})" style="margin-top: 30px;">
-							北京
+						<!-- <van-image :src="require('./cityIcon/bj.png')" @click="toDetail({city: '北京', badge: 2})" style="margin-top: 30px;">
+							<p>北京</p>
 						</van-image>
-						<van-image :src="require('./h.png')" @click="toDetail({city: '青岛', badge: 1})">
-							青岛
+						<van-image :src="require('./cityIcon/qd.png')" @click="toDetail({city: '青岛', badge: 1})">
+							<p>青岛</p>
 						</van-image>
-						<van-image :src="require('./i.png')" @click="toDetail({city: '浙江', badge: 3})" style="margin-top: 30px;">
-							浙江
-						</van-image>
+						<van-image :src="require('./cityIcon/zj.png')" @click="toDetail({city: '浙江', badge: 3})" style="margin-top: 30px;">
+							<p>浙江</p>
+						</van-image> -->
 					</div>
 				</van-tab>
 			</van-tabs>
 		</div>
 		<!-- 板块 -->
 		<van-cell-group v-for="(item, index) in ranking" :key="index" inset>
-			<van-cell value="内容" @click="toDetail(item)">
-				<van-badge :content="item.badge" color="#1989fa" />
+			<van-cell value="内容">
+				<van-badge :content="item.badge" color="#8AB6E3" />
 				<van-image round width="30px" height="30px" :src="item.imageSrc" />
 				<span>{{item.city}}</span>
 				<span>{{item.score}}</span>
+				<span @click="toDetail(item)" style="font-weight: 200;">查看详情</span>
 			</van-cell>
 		</van-cell-group>
 	</div>
@@ -99,12 +100,15 @@ export default {
 }
 .rankingBox {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	height: 180px;
-	background-image: url("./f.png");
+	background-image: url("./f.jpg");
 	background-repeat: no-repeat;
-	background-size: 175px 110px;
+	background-size: 98% 100%;
 	background-position: bottom;
+	p {
+		margin-top: -15px;
+	}
 }
 .van-image {
 	height: 60px;
