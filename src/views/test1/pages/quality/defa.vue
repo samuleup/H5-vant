@@ -100,15 +100,12 @@ export default {
                   {
                     symbol: 'none',
                     x: '90%',
-                    yAxis: 'max'
                   },
                   {
                     symbol: 'circle',
                     label: {
                       position: 'start',
-                      formatter: 'Max'
                     },
-                    type: 'max',
                     name: '最高点'
                   }
                 ]

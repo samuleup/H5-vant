@@ -6,13 +6,13 @@
           <p class="Title">13月累计继续率</p>
           <div class="zhibiao">
             <p>
-              <span></span>指标1
+              <span></span>低
             </p>
             <p>
-              <span></span>指标2
+              <span></span>中
             </p>
             <p>
-              <span></span>指标3
+              <span></span>高
             </p>
           </div>
           <Echarts :Data="Data1"></Echarts>
@@ -22,13 +22,13 @@
           <p class="Title">25月累计继续率</p>
           <div class="zhibiao">
             <p>
-              <span></span>指标1
+              <span></span>低
             </p>
             <p>
-              <span></span>指标2
+              <span></span>中
             </p>
             <p>
-              <span></span>指标3
+              <span></span>高
             </p>
           </div>
           <Echarts id="Data1" :Data="Data1"></Echarts>

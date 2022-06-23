@@ -38,6 +38,19 @@ export default {
       loading: false,
       finished: false,
       GridList: [
+
+        {
+          name: "实时保费",
+          value: "6",
+          router: "timePremium",
+          url: require('./06.png')
+        },
+        {
+          name: "品质",
+          value: "3",
+          router: "quality",
+          url: require('./03.png')
+        },
         {
           name: "投资",
           value: "1",
@@ -51,12 +64,6 @@ export default {
           url: require('./02.png')
         },
         {
-          name: "品质",
-          value: "3",
-          router: "quality",
-          url: require('./03.png')
-        },
-        {
           name: "KPI",
           value: "4",
           router: "KPI",
@@ -68,12 +75,6 @@ export default {
           router: "risk",
           url: require('./05.png')
         },
-        {
-          name: "实时保费",
-          value: "6",
-          router: "timePremium",
-          url: require('./06.png')
-        }
       ]
 
     };

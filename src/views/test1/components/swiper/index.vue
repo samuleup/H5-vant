@@ -1,8 +1,8 @@
 <template>
   <div :style="{ width: screenWidth + 'px' }" class="swipeBox">
     <van-swipe class="my-swipe" :width="screenWidth" :autoplay="3000" :show-indicators="false">
-      <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">1</van-swipe-item>
-      <!-- <van-swipe-item @click="ClickSwiper('/test1/timePremium')">实时保费</van-swipe-item> -->
+      <van-swipe-item @click="ClickSwiper('/test1/timePremium')">1</van-swipe-item>
+      <!-- <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">实时保费</van-swipe-item> -->
       <!-- <van-swipe-item @click="ClickSwiper('/test1/OfficePremium')">总保费</van-swipe-item> -->
     </van-swipe>
   </div>
