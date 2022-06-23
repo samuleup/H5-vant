@@ -1,6 +1,6 @@
 <template>
   <div class='AppBodyBox'>
-    risk
+
   </div>
 </template>
 
@@ -10,7 +10,8 @@ export default {
   components: {},
   data () {
     return {
-
+      list: [
+      ]
     };
   },
   computed: {},
