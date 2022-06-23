@@ -1,38 +1,49 @@
 <template>
   <div class='AppBodyBox'>
-    <van-tabs v-model="active">
+    <van-tabs v-model="active1">
       <van-tab title="累计继续率">
         <div class="Box">
           <p class="Title">13月累计继续率</p>
+          <div class="zhibiao">
+            <p>
+              <span></span>低
+            </p>
+            <p>
+              <span></span>中
+            </p>
+            <p>
+              <span></span>高
+            </p>
+          </div>
           <Echarts :Data="Data1"></Echarts>
           <div class="FONT" @click="And">查看分公司排名</div>
         </div>
         <div class="Box">
           <p class="Title">25月累计继续率</p>
+          <div class="zhibiao">
+            <p>
+              <span></span>低
+            </p>
+            <p>
+              <span></span>中
+            </p>
+            <p>
+              <span></span>高
+            </p>
+          </div>
           <Echarts id="Data1" :Data="Data1"></Echarts>
           <div class="FONT" @click="And">查看分公司排名</div>
         </div>
       </van-tab>
       <van-tab title="其他">
-        <div class="Box">
-          <p class="Title">理赔获赔率</p>
-          <Echarts id="Data2" :Data="TongbiHuanbi"></Echarts>
-          <div class="FONT">查看分公司排名</div>
-        </div>
-        <div class="Box">
-          <p class="Title">投诉总量</p>
-          <Echarts id="Data3" :Data="TongbiHuanbi"></Echarts>
-          <div class="FONT">查看分公司排名</div>
-        </div>
-        <div class="Box">
-          <p class="Title">保全时效</p>
-          <Echarts id="Data4" :Data="TongbiHuanbi"></Echarts>
-          <div class="FONT">查看分公司排名</div>
-        </div>
-        <div class="Box">
-          <p class="Title">出险支付时效</p>
-          <Echarts id="Data5" :Data="TongbiHuanbi"></Echarts>
-          <div class="FONT">查看分公司排名</div>
+        <div style="padding-top:40px">
+          <h2 style="padding:20px;text-align: center; font-weight: 600;">综合</h2>
+          <van-grid :column-num="3">
+            <van-grid-item v-for="(item,index) in List" :key="index" @click="$router.push('/defa')">
+              <p class="t1">{{item.value}}</p>
+              <p class="t1">{{item.label}}</p>
+            </van-grid-item>
+          </van-grid>
         </div>
       </van-tab>
 
@@ -56,8 +67,20 @@ export default {
   components: { Echarts },
   data () {
     return {
-      active: 0,
-      showPicker: false
+      active1: 0,
+      showPicker: false,
+      List: [
+        { label: '保全失效', value: "1.31" },
+        { label: '出险支付时效', value: "1.30" },
+        { label: '申请支付时效', value: "1.33" },
+        { label: '投诉办结及时率', value: "1.50" },
+        { label: '核保函件回销', value: "1.10" },
+        { label: '呼入工单', value: "1.60" },
+        { label: '个人医疗结案率', value: "1.11" },
+        { label: '报案受理', value: "1.341" },
+        { label: '投诉工单办结', value: "1.350" },
+        { label: '呼出工单', value: "1.36" }
+      ]
     };
   },
   computed: {
@@ -116,74 +139,7 @@ export default {
         ]
       }
     },
-    TongbiHuanbi () {
-      return {
-        tooltip: {
-          trigger: 'axis'
-        },
-        legend: {},
-        toolbox: {
-          show: true,
 
-        },
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-          type: 'value',
-          axisLabel: {
-            formatter: '{value} °C'
-          }
-        },
-        series: [
-          {
-            name: 'Highest',
-            type: 'line',
-            data: [10, 11, 13, 11, 12, 12, 9],
-            markPoint: {
-              data: [
-                { type: 'max', name: 'Max' },
-                { type: 'min', name: 'Min' }
-              ]
-            },
-            markLine: {
-              data: [{ type: 'average', name: 'Avg' }]
-            }
-          },
-          {
-            name: 'Lowest',
-            type: 'line',
-            data: [1, -2, 2, 5, 3, 2, 0],
-            markPoint: {
-              data: [{ name: '周最低', value: -2, xAxis: 1, yAxis: -1.5 }]
-            },
-            markLine: {
-              data: [
-                { type: 'average', name: 'Avg' },
-                [
-                  {
-                    symbol: 'none',
-                    x: '90%',
-                    yAxis: 'max'
-                  },
-                  {
-                    symbol: 'circle',
-                    label: {
-                      position: 'start',
-                      formatter: 'Max'
-                    },
-                    type: 'max',
-                    name: '最高点'
-                  }
-                ]
-              ]
-            }
-          }
-        ]
-      }
-    },
     Data () {
       return [
         { label: "山东", value: 90, mum: 1 },
@@ -205,8 +161,19 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+.t1:nth-of-type(1) {
+  font-size: 16px;
+  text-align: center;
+  color: #fd666d;
+  padding-bottom: 10px;
+}
+.t1:nth-of-type(2) {
+  font-size: 14px;
+  color: #000000;
+  text-align: center;
+}
 .Box {
-  padding: 100px 10px;
+  padding: 20px 10px 100px 10px;
   background: #fff;
 }
 .Title {
@@ -243,6 +210,39 @@ export default {
     border-radius: 10px;
     background: linear-gradient(to right, #c1abde, #95b1ec);
     text-indent: 10px;
+  }
+}
+.zhibiao {
+  padding: 10px 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    span {
+      display: inline-block;
+      margin-right: 6px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  p:nth-of-type(1) {
+    span {
+      background: #67e0e3;
+    }
+  }
+  p:nth-of-type(2) {
+    span {
+      background: #37a2da;
+    }
+  }
+  p:nth-of-type(3) {
+    span {
+      background: #fd666d;
+    }
   }
 }
 </style>

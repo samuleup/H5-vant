@@ -68,8 +68,13 @@ const routes = [
           },
           {
             path: '/timePremium1',
-            name: '详情',
+            name: '保费详情',
             component: () => import('../views/test1/pages/timePremium/defa/index.vue'),
+          },
+          {
+            path: '/defa',
+            name: '详情',
+            component: () => import('../views/test1/pages//quality/defa.vue'),
           },
         ]
       },
