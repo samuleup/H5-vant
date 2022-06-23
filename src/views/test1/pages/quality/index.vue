@@ -13,98 +13,29 @@
           <div class="FONT" @click="And">查看分公司排名</div>
         </div>
       </van-tab>
-      <van-tab title="理赔获赔率">
+      <van-tab title="其他">
         <div class="Box">
           <p class="Title">理赔获赔率</p>
-          <Echarts id="Data2" :Data="Data1"></Echarts>
+          <Echarts id="Data2" :Data="TongbiHuanbi"></Echarts>
           <div class="FONT">查看分公司排名</div>
         </div>
-        <div class="Box">
-          <p class="Title">理赔获赔率时间维度</p>
-          <Echarts id="Data2a" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">理赔获赔率机构维度</p>
-          <Echarts id="Data2b" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">理赔获赔率同比维度</p>
-          <Echarts id="Data2c" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">理赔获赔率环比维度</p>
-          <Echarts id="Data2d" :Data="Data1"></Echarts>
-        </div>
-      </van-tab>
-      <van-tab title="投诉总量">
         <div class="Box">
           <p class="Title">投诉总量</p>
-          <Echarts id="Data3" :Data="Data1"></Echarts>
+          <Echarts id="Data3" :Data="TongbiHuanbi"></Echarts>
           <div class="FONT">查看分公司排名</div>
         </div>
-        <div class="Box">
-          <p class="Title">投诉总量时间维度</p>
-          <Echarts id="Data3a" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">投诉总量机构维度</p>
-          <Echarts id="Data3b" :Data="Data1"></Echarts>
-        </div>
-      </van-tab>
-      <van-tab title="保全时效">
         <div class="Box">
           <p class="Title">保全时效</p>
-          <Echarts id="Data4" :Data="Data1"></Echarts>
+          <Echarts id="Data4" :Data="TongbiHuanbi"></Echarts>
           <div class="FONT">查看分公司排名</div>
         </div>
-        <div class="Box">
-          <p class="Title">保全时效时间维度</p>
-          <Echarts id="Data4a" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">保全时效机构维度</p>
-          <Echarts id="Data4b" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">保全时效同比维度</p>
-          <Echarts id="Data4c" :Data="TongbiHuanbi"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">保全时效环比维度</p>
-          <Echarts id="Data4d" :Data="TongbiHuanbi"></Echarts>
-        </div>
-      </van-tab>
-      <van-tab title="出险支付时效">
         <div class="Box">
           <p class="Title">出险支付时效</p>
-          <Echarts id="Data5" :Data="Data1"></Echarts>
+          <Echarts id="Data5" :Data="TongbiHuanbi"></Echarts>
           <div class="FONT">查看分公司排名</div>
         </div>
-        <div class="Box">
-          <p class="Title">出险支付时效时间维度</p>
-          <Echarts id="Data5a" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">出险支付时效机构维度</p>
-          <Echarts id="Data5b" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">出险支付时效险种维度</p>
-          <Echarts id="Data5c" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">出险支付时效缴费期维度</p>
-          <Echarts id="Data5d" :Data="Data1"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">出险支付时效同比维度</p>
-          <Echarts id="Data5e" :Data="TongbiHuanbi"></Echarts>
-        </div>
-        <div class="Box">
-          <p class="Title">出险支付时效环比维度</p>
-          <Echarts id="Data5f" :Data="TongbiHuanbi"></Echarts>
-        </div>
       </van-tab>
+
     </van-tabs>
     <van-popup v-model="showPicker" position="bottom">
       <div class="Progress" v-for="(item,index) in Data" :key="index">
@@ -275,8 +206,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 .Box {
-  padding: 10px 10px;
-  padding-top: 100px;
+  padding: 100px 10px;
   background: #fff;
 }
 .Title {
@@ -290,6 +220,7 @@ export default {
   line-height: 40px;
   text-align: center;
   color: cornflowerblue;
+  border: 1px solid cornflowerblue;
 }
 .Progress {
   padding: 4px;
